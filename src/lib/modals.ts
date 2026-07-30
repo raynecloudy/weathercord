@@ -1,5 +1,5 @@
 export enum ModalType {
   AccountSettings = "accountSettings",
-  CreateModal = "createModal",
+  CreateStation = "createStation",
   SignUp = "signUp"
 }

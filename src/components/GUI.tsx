@@ -45,7 +45,7 @@ const GUI = () => {
         <AccountSettingsModal startingTab={initialAccountSettingsTab} setInitialAccountSettingsTab={setInitialAccountSettingsTab} />
       }
 
-      {modals[ModalType.CreateModal] &&
+      {modals[ModalType.CreateStation] &&
         <CreateStationModal />
       }
 
