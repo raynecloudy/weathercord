@@ -3,6 +3,8 @@ import Modal from "./Modal";
 import { showFeedbackState } from "@/lib/store/reducers/feedbackState";
 import { useAppDispatch } from "@/lib/store/hooks";
 import { useState } from "react";
+import { closeModal } from "@/lib/store/reducers/modals";
+import { ModalType } from "@/lib/modals";
 
 const CreateStationModal = () => {
   const [name, setName] = useState("");
@@ -10,7 +12,7 @@ const CreateStationModal = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <Modal>
+    <Modal onClose={() => dispatch(closeModal(ModalType.CreateStation))}>
       <h2>Create Station</h2>
       <form onSubmit={async (event) => {
         event.preventDefault();

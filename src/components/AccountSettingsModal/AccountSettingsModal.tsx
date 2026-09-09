@@ -59,8 +59,7 @@ const AccountSettingsModal = (props: {
   }, [0]);
 
   return (
-    <Modal className="w-65 h-40 flex gap-2 relative">
-      <BoxButton className="absolute top-1 right-1 backdrop-blur-sm" onClick={() => dispatch(closeModal(ModalType.AccountSettings))}><X /></BoxButton>
+    <Modal className="w-65 h-40 flex gap-2" onClose={() => dispatch(closeModal(ModalType.AccountSettings))}>
       <TabList className="w-16 shrink-0 -m-2 p-2 pr-1 -mr-1 relative" tab={tab} tabList={tabList} setTab={setTab} />
       <div className="grow overflow-auto -m-2 p-2 pl-1 -ml-1">
         {tab === ModalTab.Profile &&
