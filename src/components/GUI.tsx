@@ -12,6 +12,7 @@ import { nullish } from "$/typing";
 import FeedbackStateIndicator from "./FeedbackStateIndicator";
 import CreateStationModal from "./CreateStationModal";
 import StationList from "./StationList";
+import StationInfo from "./StationInfo";
 
 const GUI = () => {
   const [initialAccountSettingsTab, setInitialAccountSettingsTab] = useState(0);
@@ -35,7 +36,8 @@ const GUI = () => {
     <>
       <div className="contents" inert={Object.values(modals).includes(true)}>
         <StationList />
-        <UserIndicator className="w-20" canEdit />
+        <StationInfo />
+        <UserIndicator canEdit />
         <Prompt className="absolute bottom-1 left-22" style={{
           width: "calc(100vw - 23rem)"
         }} />

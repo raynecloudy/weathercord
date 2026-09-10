@@ -3,6 +3,7 @@ import { ModalType } from "@/lib/modals";
 import { openModal } from "@/lib/store/reducers/modals";
 import { Plus } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
+import { setSelectedStation } from "@/lib/store/reducers/stations";
 
 const abbreviatedName = (name: string) => name.replace(/[^a-zA-Z0-9& ]/g, "").match(/((\b|^)[a-zA-Z0-9&])/g)?.join("");
 
@@ -17,7 +18,7 @@ const StationList = () => {
       <div className="flex flex-col gap-0.5 grow">
         {stations.map((station, i) => {
           return (
-            <button key={i} className="w-3 h-3 rounded-xl cursor-pointer bg-(--outline)">{abbreviatedName(station.name)}</button>
+            <button key={i} className="w-3 h-3 rounded-xl cursor-pointer bg-(--outline)" onClick={() => dispatch(setSelectedStation(station.id))}>{abbreviatedName(station.name)}</button>
           );
         })}
       </div>
